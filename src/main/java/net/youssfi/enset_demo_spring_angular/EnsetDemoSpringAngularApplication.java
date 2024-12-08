@@ -27,15 +27,21 @@ public class EnsetDemoSpringAngularApplication {
 										PaymentRepository paymentRepository){
 		return  args -> {
 			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
-					.firstName("Mohamed").code("112233").programId("SDIA").build());
+					.firstName("Mohamed").lastName("Youssfi").code("112233").programId("SDIA").build());
 			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
-					.firstName("Imane").code("112244").programId("SDIA").build());
+					.firstName("Imane").lastName("Alexandre").code("112244").programId("SDIA").build());
 			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
-					.firstName("Yasmine").code("112255").programId("GLSID").build());
+					.firstName("Yasmine").lastName("Fleron").code("112255").programId("GLSID").build());
 			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
-					.firstName("Najat").code("112266").programId("BDCC").build());
+					.firstName("Najat").lastName("Karbouch").code("112266").programId("BDCC").build());
 			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
-					.firstName("Fouzia").code("112277").programId("SDIA").build());
+					.firstName("Fouzia").lastName("Tayek").code("112277").programId("GLSID").build());
+			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
+					.firstName("Axelle").lastName("Bernard").code("112288").programId("SDIA").build());
+			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
+					.firstName("Sofia").lastName("Tamim").code("112299").programId("BDCC").build());
+			studentRepository.save(Student.builder().id(UUID.randomUUID().toString())
+					.firstName("Bernadette").lastName("Souki").code("112222").programId("BDCC").build());
 
 			PaymentType[] paymentTypes = PaymentType.values();
 			Random random = new Random();
@@ -43,7 +49,7 @@ public class EnsetDemoSpringAngularApplication {
 				for (int i = 0; i < 10; i++) {
 					int index = random.nextInt(paymentTypes.length);
 					Payment payment = Payment.builder()
-							.amount(1000+(int)(Math.random()+20000))
+							.amount(1000+(int)(Math.random()*20000))
 							.type(paymentTypes[index])
 							.status(PaymentStatus.CREATED)
 							.date(LocalDate.now())

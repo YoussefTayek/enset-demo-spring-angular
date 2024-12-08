@@ -25,8 +25,8 @@ import java.util.UUID;
 @Service
 @Transactional
 public class PaymentService {
-    private StudentRepository studentRepository;
-    private PaymentRepository paymentRepository;
+    private final StudentRepository studentRepository;
+    private final PaymentRepository paymentRepository;
 
     public PaymentService(StudentRepository studentRepository, PaymentRepository paymentRepository) {
         this.studentRepository = studentRepository;
